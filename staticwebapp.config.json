@@ -1,0 +1,13 @@
+{
+  "routes": [
+
+      {
+          "route": "/about-us",
+          "redirect": "/about-us"
+      }
+  ],
+  "navigationFallback": {
+      "rewrite": "/index.html",
+      "exclude": ["*.{css,js,png,jpeg,svg,jpg,ico,webp,gif}"]
+  }
+}

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  font-family: "Exo",;
+}
+
+
+@font-face {
+  font-family: "exo";
+  src: url('./assets/fonts/Exo/static/Exo-Regular.ttf');
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+}
