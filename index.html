@@ -10,16 +10,241 @@
       href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Logicpoint Integrated Concepts</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <form
+      id="__vtigerWebForm"
+      name="Web"
+      action="https://10.0.7.108/modules/Webforms/capture.php"
+      method="post"
+      accept-charset="utf-8"
+      enctype="multipart/form-data"
+    >
+      <input
+        type="hidden"
+        name="__vtrftk"
+        value="sid:26253274102c0778019c8d6520f486ecceb3ddfb,1709641895"
+      /><input
+        type="hidden"
+        name="publicid"
+        value="e6d1ce2757887938e13c75d1c97581e6"
+      /><input type="hidden" name="urlencodeenable" value="1" /><input
+        type="hidden"
+        name="name"
+        value="Web"
+      />
+      <table>
+        <tbody>
+          <tr>
+            <td><label>Opportunity Name*</label></td>
+            <td>
+              <input
+                type="text"
+                name="potentialname"
+                data-label=""
+                value="Contact Name"
+                required=""
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Are You an Existing Customer</label></td>
+            <td>
+              <select
+                name="cf_965"
+                data-label="label:Are+You+an+Existing+Customer"
+              >
+                <option value="">Select Value</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Request Type</label></td>
+            <td>
+              <select name="cf_963" data-label="label:Request+Type">
+                <option value="">Select Value</option>
+                <option value="Complaint">Complaint</option>
+                <option value="Enquiry">Enquiry</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Webform Service Area</label></td>
+            <td>
+              <select name="cf_959" data-label="label:Webform+Service+Area">
+                <option value="">Select Value</option>
+                <option value="Failed Transaction">Failed Transaction</option>
+                <option value="Failed Debit Card Transaction">
+                  Failed Debit Card Transaction
+                </option>
+                <option value="Others">Others</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Webform Sub Service Area</label></td>
+            <td>
+              <select name="cf_961" data-label="label:Webform+Sub+Service+Area">
+                <option value="">Select Value</option>
+                <option value="Failed Fund Transfer to other Banks">
+                  Failed Fund Transfer to other Banks
+                </option>
+                <option value="Failed Airtime Top-up">
+                  Failed Airtime Top-up
+                </option>
+                <option value="Failed Bill Payment">Failed Bill Payment</option>
+                <option value="Delayed Inflow ( From Another Bank)">
+                  Delayed Inflow ( From Another Bank)
+                </option>
+                <option value="Delayed Outflow ( To another Bank)">
+                  Delayed Outflow ( To another Bank)
+                </option>
+                <option value="Failed POS/Web Transaction">
+                  Failed POS/Web Transaction
+                </option>
+                <option value="Failed ATM withdraw on another Bank">
+                  Failed ATM withdraw on another Bank
+                </option>
+                <option value="Failed ATM withdraw at Signature Bank">
+                  Failed ATM withdraw at Signature Bank
+                </option>
+                <option
+                  value="Partial Dispense Error/Trapped Cash at Signature Bank ATM"
+                >
+                  Partial Dispense Error/Trapped Cash at Signature Bank ATM
+                </option>
+                <option
+                  value="Partial Dispense Error/Trapped Cash at other Bank ATM"
+                >
+                  Partial Dispense Error/Trapped Cash at other Bank ATM
+                </option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Description</label></td>
+            <td><textarea name="description"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="submit" value="Submit" />
+    </form>
+    <script type="text/javascript">
+      window.onload = function () {
+        var N = navigator.appName,
+          ua = navigator.userAgent,
+          tem;
+        var M = ua.match(
+          /(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i
+        );
+        if (M && (tem = ua.match(/version\/([\.\d]+)/i)) != null) M[2] = tem[1];
+        M = M ? [M[1], M[2]] : [N, navigator.appVersion, "-?"];
+        var browserName = M[0];
+        var form = document.getElementById("__vtigerWebForm"),
+          inputs = form.elements;
+        form.onsubmit = function () {
+          var required = [],
+            att,
+            val;
+          for (var i = 0; i < inputs.length; i++) {
+            att = inputs[i].getAttribute("required");
+            val = inputs[i].value;
+            type = inputs[i].type;
+            if (type == "email") {
+              if (val != "") {
+                var elemLabel = inputs[i].getAttribute("label");
+                var emailFilter =
+                  /^[_/a-zA-Z0-9]+([!"#$%&()*+,./:;<=>?\^_`{|}~-]?[a-zA-Z0-9/_/-])*@[a-zA-Z0-9]+([\_\-\.]?[a-zA-Z0-9]+)*\.([\-\_]?[a-zA-Z0-9])+(\.?[a-zA-Z0-9]+)?$/;
+                var illegalChars = /[\(\)\<\>\,\;\:\"\[\]]/;
+                if (!emailFilter.test(val)) {
+                  alert(
+                    "For " +
+                      elemLabel +
+                      " field please enter valid email address"
+                  );
+                  return false;
+                } else if (val.match(illegalChars)) {
+                  alert(elemLabel + " field contains illegal characters");
+                  return false;
+                }
+              }
+            }
+            if (att != null) {
+              if (val.replace(/^\s+|\s+$/g, "") == "") {
+                required.push(inputs[i].getAttribute("label"));
+              }
+            }
+          }
+          if (required.length > 0) {
+            alert("The following fields are required: " + required.join());
+            return false;
+          }
+          var numberTypeInputs =
+            document.querySelectorAll("input[type=number]");
+          for (var i = 0; i < numberTypeInputs.length; i++) {
+            val = numberTypeInputs[i].value;
+            var elemLabel = numberTypeInputs[i].getAttribute("label");
+            var elemDataType = numberTypeInputs[i].getAttribute("datatype");
+            if (val != "") {
+              if (elemDataType == "double") {
+                var numRegex = /^[+-]?\d+(\.\d+)?$/;
+              } else {
+                var numRegex = /^[+-]?\d+$/;
+              }
+              if (!numRegex.test(val)) {
+                alert("For " + elemLabel + " field please enter valid number");
+                return false;
+              }
+            }
+          }
+          var dateTypeInputs = document.querySelectorAll("input[type=date]");
+          for (var i = 0; i < dateTypeInputs.length; i++) {
+            dateVal = dateTypeInputs[i].value;
+            var elemLabel = dateTypeInputs[i].getAttribute("label");
+            if (dateVal != "") {
+              var dateRegex =
+                /^[1-9][0-9]{3}-(0[1-9]|1[0-2]|[1-9]{1})-(0[1-9]|[1-2][0-9]|3[0-1]|[1-9]{1})$/;
+              if (!dateRegex.test(dateVal)) {
+                alert(
+                  "For " +
+                    elemLabel +
+                    " field please enter valid date in required format"
+                );
+                return false;
+              }
+            }
+          }
+          var inputElems = document.getElementsByTagName("input");
+          var totalFileSize = 0;
+          for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type.toLowerCase() === "file") {
+              var file = inputElems[i].files[0];
+              if (typeof file !== "undefined") {
+                var totalFileSize = totalFileSize + file.size;
+              }
+            }
+          }
+          if (totalFileSize > 52428800) {
+            alert("Maximum allowed file size including all files is 50MB.");
+            return false;
+          }
+        };
+      };
+    </script>
+    <title>UsePopcorn</title>
   </head>
-  <body >
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-<!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
-<call-us-selector phonesystem-url="https://3cx.logicpointng.com" party="LiveChat373763"></call-us-selector>
- 
-<!--Incase you don't want real time updates to the live chat plugin when options are changed, use the below code snippet. Please note that each time you change the settings you will need to copy and paste the snippet code to your website--> 
-<!--<call-us 
+    <!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
+    <call-us-selector
+      phonesystem-url="https://3cx.logicpointng.com"
+      party="LiveChat373763"
+    ></call-us-selector>
+
+    <!--Incase you don't want real time updates to the live chat plugin when options are changed, use the below code snippet. Please note that each time you change the settings you will need to copy and paste the snippet code to your website-->
+    <!--<call-us 
 phonesystem-url="https://3cx.logicpointng.com" 
 style="position:fixed;font-size:16px;line-height:17px;z-index: 99999;--call-us-main-accent-color:#e87b37;--call-us-main-background-color:#FFFFFF;--call-us-plate-background-color:#373737;--call-us-plate-font-color:#ffffff;--call-us-main-font-color:#292929;--call-us-agent-bubble-color:#29292910;right: 20px; bottom: 20px;" 
 id="wp-live-chat-by-3CX" 
@@ -56,7 +281,11 @@ greeting-offline-message="We are away, leave us a message!"
 chat-delay="2000" 
 enable-direct-call="true" 
 enable-ga="false" 
-></call-us>--> 
-<script src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+></call-us>-->
+    <script
+      src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js"
+      id="tcx-callus-js"
+      charset="utf-8"
+    ></script>
   </body>
 </html>
