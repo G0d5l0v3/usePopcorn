@@ -20,3 +20,11 @@ body {
   font-family: "poppins";
   src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
 }
+
+.webform {
+  font-family: "Nunito Sans";
+
+}
+.table{
+  background-color:"#6c1d45";
+}

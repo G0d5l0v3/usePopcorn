@@ -1,0 +1,344 @@
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<form
+  id="__vtigerWebForm"
+  name="WebForm"
+  action="https://10.0.7.108/modules/Webforms/capture.php"
+  method="post"
+  accept-charset="utf-8"
+  enctype="multipart/form-data"
+  class="webform"
+>
+  <input
+    type="hidden"
+    name="__vtrftk"
+    value="sid:f299307728cf79be7d1dd274098b4b286d870703,1709754505"
+  /><input
+    type="hidden"
+    name="publicid"
+    value="94c296bc252e198401771312b5553941"
+  /><input type="hidden" name="urlencodeenable" value="1" /><input
+    type="hidden"
+    name="name"
+    value="WebForm"
+  />
+  <table class="table">
+    <tbody>
+      <tr>
+        <td><label>Last Name*</label></td>
+        <td>
+          <input
+            type="text"
+            name="lastname"
+            data-label=""
+            value=""
+            required=""
+          />
+        </td>
+      </tr>
+      <tr>
+        <td><label>First Name</label></td>
+        <td>
+          <input type="text" name="firstname" data-label="" value="" />
+        </td>
+      </tr>
+      <tr>
+        <td><label>Mobile Phone</label></td>
+        <td><input type="text" name="mobile" data-label="" value="" /></td>
+      </tr>
+      <tr>
+        <td><label>Primary Email</label></td>
+        <td><input type="email" name="email" data-label="" value="" /></td>
+      </tr>
+      <tr>
+        <td><label>Are You an Existing Customer</label></td>
+        <td>
+          <select
+            name="cf_969"
+            data-label="label:Are+You+an+Existing+Customer"
+            id="existingCustomer"
+            onchange="{requestTypeFieldConditon()}"
+          >
+            <option value="">Select Value</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label>Request Type</label></td>
+        <td>
+          <select name="cf_981" data-label="label:Request+Type">
+            <option value="">Select Value</option>
+            <option id="complaint" value="Complaint">Complaint</option>
+            <option id="enquiry" value="Enquiry">Enquiry</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label>Service Area</label></td>
+        <td>
+          <select
+            name="cf_983"
+            data-label="label:Service+Area"
+            id="selectedArea"
+            onchange="{showSubAreas()}"
+          >
+            <option value="">Select Value</option>
+            <option value="Failed Transaction">Failed Transaction</option>
+            <option value="Failed Debit Card Transaction">
+              Failed Debit Card Transaction
+            </option>
+            <option value="Others">Others</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label>Sub Service Area</label></td>
+        <td>
+          <select name="cf_985" data-label="label:Sub+Service+Area">
+            <option value="">Select Value</option>
+            <option
+              class="failedTransaction"
+              value="Failed Fund Transfer to other Banks"
+            >
+              Failed Fund Transfer to other Banks
+            </option>
+            <option class="failedTransaction" value="Failed Airtime Top-up">
+              Failed Airtime Top-up
+            </option>
+            <option class="failedTransaction" value="Failed Bill Payment">
+              Failed Bill Payment
+            </option>
+            <option
+              class="failedTransaction"
+              value="Delayed Inflow ( From Another Bank)"
+            >
+              Delayed Inflow ( From Another Bank)
+            </option>
+            <option
+              class="failedTransaction"
+              value="Delayed Outflow ( To another Bank)"
+            >
+              Delayed Outflow ( To another Bank)
+            </option>
+            <option
+              class="failedDebitCardTransaction"
+              value="Failed POS/Web Transaction"
+            >
+              Failed POS/Web Transaction
+            </option>
+            <option
+              class="failedDebitCardTransaction"
+              value="Failed ATM withdraw on another Bank"
+            >
+              Failed ATM withdraw on another Bank
+            </option>
+            <option
+              class="failedDebitCardTransaction"
+              value="Failed ATM withdraw at Signature Bank"
+            >
+              Failed ATM withdraw at Signature Bank
+            </option>
+            <option
+              class="failedDebitCardTransaction"
+              value="Partial Dispense Error/Trapped Cash at Signature Bank ATM"
+            >
+              Partial Dispense Error/Trapped Cash at Signature Bank ATM
+            </option>
+            <option
+              class="failedDebitCardTransaction"
+              value="Partial Dispense Error/Trapped Cash at other Bank ATM"
+            >
+              Partial Dispense Error/Trapped Cash at other Bank ATM
+            </option>
+            <option id="Others" value="Others">Others</option>
+          </select>
+        </td>
+      </tr>
+      <tr class="hideEnquiry" style="display: none">
+        <td><label>Account Number</label></td>
+        <td><input type="text" name="cf_973" data-label="" value="" /></td>
+      </tr>
+      <tr class="hideEnquiry" style="display: none">
+        <td><label>Account - Name</label></td>
+        <td><input type="text" name="cf_1007" data-label="" value="" /></td>
+      </tr>
+      <tr class="hideEnquiry" style="display: none">
+        <td><label>Transaction Date</label></td>
+        <td>
+          <input type="date" name="cf_979" data-label="" value="" />
+        </td>
+      </tr>
+      <tr class="hideEnquiry" style="display: none">
+        <td><label>Transaction Amount</label></td>
+        <td><input type="text" name="cf_975" data-label="" value="" /></td>
+      </tr>
+      <tr class="hideEnquiry" style="display: none">
+        <td>
+          <input type="hidden" name="emailoptout" data-label="" value="0" />
+        </td>
+      </tr>
+      <tr>
+        <td><label>Description</label></td>
+        <td><textarea name="description"></textarea></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <input type="submit" value="Submit" />
+</form>
+<script type="text/javascript">
+  function requestTypeFieldConditon() {
+    var complaintRow = document.getElementById("complaint");
+    var enquiryRow = document.getElementById("enquiry");
+    var hideTransactionFields = document.querySelectorAll(".hideEnquiry");
+
+    var customerExist = document.getElementById("existingCustomer");
+
+    if (customerExist.value === "Yes") {
+      complaintRow.style.display = "table-row";
+      enquiryRow.style.display = "none";
+      for (var i = 0; i < hideTransactionFields.length; i++) {
+        hideTransactionFields[i].style.display = "table-row";
+      }
+    } else if (customerExist.value !== "Yes") {
+      complaintRow.style.display = "none";
+      enquiryRow.style.display = "table-row";
+      for (var i = 0; i < hideTransactionFields.length; i++) {
+        hideTransactionFields[i].style.display = "none";
+      }
+    }
+  }
+  function showSubAreas() {
+    var failedTransactionRow =
+      document.querySelectorAll(".failedTransaction");
+    var failedDebitCardTransactionRow = document.querySelectorAll(
+      ".failedDebitCardTransaction"
+    );
+    var selectedArea = document.getElementById("selectedArea");
+    var Others = document.getElementById("Others");
+
+    if (selectedArea.value === "Failed Transaction") {
+      for (var i = 0; i < failedDebitCardTransactionRow.length; i++) {
+        failedDebitCardTransactionRow[i].style.display = "none";
+        failedTransactionRow[i].style.display = "table-row";
+        Others.style.display = "none";
+      }
+    } else if (selectedArea.value === "Failed Debit Card Transaction") {
+      for (var i = 0; i < failedTransactionRow.length; i++) {
+        failedDebitCardTransactionRow[i].style.display = "table-row";
+        failedTransactionRow[i].style.display = "none";
+        Others.style.display = "none";
+      }
+    } else if (selectedArea.value === "Others") {
+      for (var i = 0; i < failedTransactionRow.length; i++) {
+        failedTransactionRow[i].style.display = "none";
+      }
+      for (var i = 0; i < failedDebitCardTransactionRow.length; i++) {
+        failedDebitCardTransactionRow[i].style.display = "none";
+      }
+      Others.style.display = "table-row";
+    }
+  }
+  window.onload = function () {
+    var N = navigator.appName,
+      ua = navigator.userAgent,
+      tem;
+    var M = ua.match(
+      /(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i
+    );
+    if (M && (tem = ua.match(/version\/([\.\d]+)/i)) != null) M[2] = tem[1];
+    M = M ? [M[1], M[2]] : [N, navigator.appVersion, "-?"];
+    var browserName = M[0];
+    var form = document.getElementById("__vtigerWebForm"),
+      inputs = form.elements;
+    form.onsubmit = function () {
+      var required = [],
+        att,
+        val;
+      for (var i = 0; i < inputs.length; i++) {
+        att = inputs[i].getAttribute("required");
+        val = inputs[i].value;
+        type = inputs[i].type;
+        if (type == "email") {
+          if (val != "") {
+            var elemLabel = inputs[i].getAttribute("label");
+            var emailFilter =
+              /^[_/a-zA-Z0-9]+([!"#$%&()*+,./:;<=>?\^_`{|}~-]?[a-zA-Z0-9/_/-])*@[a-zA-Z0-9]+([\_\-\.]?[a-zA-Z0-9]+)*\.([\-\_]?[a-zA-Z0-9])+(\.?[a-zA-Z0-9]+)?$/;
+            var illegalChars = /[\(\)\<\>\,\;\:\"\[\]]/;
+            if (!emailFilter.test(val)) {
+              alert(
+                "For " +
+                  elemLabel +
+                  " field please enter valid email address"
+              );
+              return false;
+            } else if (val.match(illegalChars)) {
+              alert(elemLabel + " field contains illegal characters");
+              return false;
+            }
+          }
+        }
+        if (att != null) {
+          if (val.replace(/^\s+|\s+$/g, "") == "") {
+            required.push(inputs[i].getAttribute("label"));
+          }
+        }
+      }
+      if (required.length > 0) {
+        alert("The following fields are required: " + required.join());
+        return false;
+      }
+      var numberTypeInputs =
+        document.querySelectorAll("input[type=number]");
+      for (var i = 0; i < numberTypeInputs.length; i++) {
+        val = numberTypeInputs[i].value;
+        var elemLabel = numberTypeInputs[i].getAttribute("label");
+        var elemDataType = numberTypeInputs[i].getAttribute("datatype");
+        if (val != "") {
+          if (elemDataType == "double") {
+            var numRegex = /^[+-]?\d+(\.\d+)?$/;
+          } else {
+            var numRegex = /^[+-]?\d+$/;
+          }
+          if (!numRegex.test(val)) {
+            alert("For " + elemLabel + " field please enter valid number");
+            return false;
+          }
+        }
+      }
+      var dateTypeInputs = document.querySelectorAll("input[type=date]");
+      for (var i = 0; i < dateTypeInputs.length; i++) {
+        dateVal = dateTypeInputs[i].value;
+        var elemLabel = dateTypeInputs[i].getAttribute("label");
+        if (dateVal != "") {
+          var dateRegex =
+            /^[1-9][0-9]{3}-(0[1-9]|1[0-2]|[1-9]{1})-(0[1-9]|[1-2][0-9]|3[0-1]|[1-9]{1})$/;
+          if (!dateRegex.test(dateVal)) {
+            alert(
+              "For " +
+                elemLabel +
+                " field please enter valid date in required format"
+            );
+            return false;
+          }
+        }
+      }
+      var inputElems = document.getElementsByTagName("input");
+      var totalFileSize = 0;
+      for (var i = 0; i < inputElems.length; i++) {
+        if (inputElems[i].type.toLowerCase() === "file") {
+          var file = inputElems[i].files[0];
+          if (typeof file !== "undefined") {
+            var totalFileSize = totalFileSize + file.size;
+          }
+        }
+      }
+      if (totalFileSize > 52428800) {
+        alert("Maximum allowed file size including all files is 50MB.");
+        return false;
+      }
+    };
+  };
+</script>
